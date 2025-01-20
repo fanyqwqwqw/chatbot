@@ -1,0 +1,39 @@
+swagger: "2.0"
+info:
+  title: "Chatbot API"
+  description: "API para interactuar con el chatbot de productos"
+  version: "1.0.0"
+paths:
+  /chatbot:
+    post:
+      summary: "Procesa las preguntas del usuario y responde con información sobre productos."
+      parameters:
+        - in: body
+          name: message
+          required: true
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Mensaje enviado por el usuario.
+                example: "¿Cuánto cuesta el Pollo a la Brasa Completo?"
+      responses:
+        200:
+          description: Respuesta generada por el chatbot.
+          schema:
+            type: object
+            properties:
+              response:
+                type: string
+                description: Respuesta del chatbot.
+                example: "El precio del pollo es 20 soles."
+        400:
+          description: Solicitud incorrecta.
+          schema:
+            type: object
+            properties:
+              response:
+                type: string
+                description: Mensaje de error.
+                example: "Por favor, escribe una pregunta válida."

@@ -1,0 +1,6 @@
+eventlet
+Flask
+flask-cors
+flasgger
+google-cloud-dialogflow
+requests
